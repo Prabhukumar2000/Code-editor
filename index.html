@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <script src="https://kit.fontawesome.com/74bb2c2971.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <h1 style="color: aqua;">AB's <a style="color: aliceblue;" style="font-size: small;"><i>Codepen</i></a></h1>
+        </div>
+        <div class="navbar-right">
+          <a class="a-element" href="#services">Services</a></button>
+           <a  class="a-element" href="#contact">contact</a></button>
+           <a  href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" class="a-element">follow here</a></button>
+        </div>    
+    </div>
+    <div class="container"> 
+<div class="left">
+    <label><i class="fa-brands fa-html5"></i> HTML</label>
+    <textarea id="html-code" onkeyup="run()"></textarea>
+
+    <label><i class="fa-brands fa-css3-alt"></i> CSS</label>
+    <textarea id="css-code" onkeyup="run()"></textarea>
+
+    <label><i class="fa-brands fa-js"></i> javascript</label>
+    <textarea id="js-code" onkeyup="run()"></textarea>
+</div>
+<div class="right">
+<label><i class="fa-solid fa-play"></i> output</label>
+<iframe id="output"></iframe>
+    </div>
+    </div>
+    <div class="services" id="services">
+        <h1 class="ser-h1">SERVICES WE OFFER</h1>
+        <div class="services-sub-cont"> 
+            <div class="services-card">
+                <h1 class="sc-h1">Web Designing</h1>
+                <P class="sc-p1">i'm pasionate to create different websites ,And i do have dedicated to work with a company</P>
+
+            </div>
+            <div class="services-card">
+                <h1 class="sc-h2">Thumbanail Editing</h1>
+                <P class="sc-p2">I have much experience in making of thumbnails for social media applications,And i do have dedicated to work with a company or a team</P>
+
+            </div>
+            <div class="services-card">
+                <h1 class="sc-h3">Photoshop</h1>
+                <P class="sc-p3">I'm expert in photo editing,And i do have dedicated to work with a company or a team</P>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="contact" id="contact">
+        <h1 class="ser-h1">CONTACT US</h1>
+        <div class="contact-info">
+            <p class="cont">Pramod kumar</p>
+            <p class="cont">+91 9347175760</p>
+            <p class="cont">Thepramodkumar178@gmail.com</p>
+        </div>
+        <div class="social-icons">
+<div class="social-icon">
+<img src="">
+</div>
+        </div>
+
+
+    </div>
+    <script>
+function run(){
+    let htmlCode = document.getElementById("html-code").value;
+    let cssCode = document.getElementById("css-code").value;
+    let jsCode = document.getElementById("js-code").value;
+    let output = document.getElementById("output");
+
+output.contentDocument.body.innerHTML = htmlCode + "<style>" +cssCode +"</style>";
+output.contentWindow.eval(jsCode);
+}
+    </script>
+
+</body>
+</html>
